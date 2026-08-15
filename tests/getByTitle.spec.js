@@ -11,6 +11,5 @@ test('Launch application', async({page}) => {
 
     //system mode was set to dark so verify clicking button switches to light mode
     await expect(page.getByTitle('light mode')).toBeVisible();
-
 })
 
