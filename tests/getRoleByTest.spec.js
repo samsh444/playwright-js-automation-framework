@@ -5,6 +5,6 @@ import {test, expect} from '@playwright/test';
 test('Launch application', async({page}) => {
     await page.goto('https://parabank.parasoft.com/parabank/index.html');
 
-    //test getRoleBy for playwright locators
+    //test getByRole for playwright locators
     await page.getByRole('link', {name: 'Forgot login info?'}).click();
 })

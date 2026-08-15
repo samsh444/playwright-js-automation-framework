@@ -5,7 +5,7 @@ import {test, expect} from '@playwright/test';
 test('Launch application', async({page}) => {
     await page.goto('https://login.salesforce.com/');
 
-    //getRoleBy for playwright locators > Username textbox/field and click method 
-    await page.getByRole('textbox', {name: 'Username'}).click();
+    //getByText for locator
+    await page.getByText('Forgot Your Password').click();
 
 })
