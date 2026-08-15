@@ -7,5 +7,4 @@ test('Launch application', async({page}) => {
 
     //getByText for locator
     await page.getByText('Forgot Your Password').click();
-
 })
