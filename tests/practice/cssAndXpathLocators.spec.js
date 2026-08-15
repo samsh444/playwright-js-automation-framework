@@ -8,6 +8,6 @@ test('Launch application', async({page}) => {
     //username on sales for using relative xpath
     await page.locator("xpath=//input[@id='username']").fill('testuser');
 
-    //login button > css selector
+    //login button and click on > css selector
     await page.locator("css=#Login").click();
 })
