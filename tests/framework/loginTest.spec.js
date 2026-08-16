@@ -37,6 +37,7 @@ test.describe('Login functionality', () => {
     await expect(page.getByText('You logged into a secure area!')).toBeVisible();
     await loginPage.logout();
     // assertion step for verifying logout worked
+    // verifying flash message for logout
     await expect(page.getByText('You logged out of the secure area!')).toBeVisible();
   });
 
