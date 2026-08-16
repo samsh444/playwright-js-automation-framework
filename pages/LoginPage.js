@@ -21,7 +21,7 @@ export class LoginPage {
     this.usernameField = page.getByRole('textbox', { name: 'Username' });
     this.passwordField = page.getByRole('textbox', { name: 'Password' });
     this.loginButton = page.getByRole('button', { name: 'Login' });
-    this.logoutButton = page.getByRole('button', {name: 'Logout'});
+    this.logoutButton = page.locator("xpath=//i[@class='icon-2x icon-signout']");
   }
 
   /**
@@ -46,9 +46,7 @@ export class LoginPage {
   }
 
   /**
-   * Performs logout attemp by clicking the logout button
-   * 
-   * @param {string} logout
+   * Performs logout attempt by clicking the logout button
    */
   async logout() {
     await this.logoutButton.click();

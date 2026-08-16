@@ -20,7 +20,7 @@ test.describe('Login functionality', () => {
     await loginPage.login('tomsmith', 'SuperSecretPassword!');
 
     // Confirm the correct locator/assertion for the post-login success message.
-    // This site typically shows a message like "You logged into a secure area!"
+    // This site typically shows a flash message like "You logged into a secure area!"
     await expect(page.getByText('You logged into a secure area!')).toBeVisible();
   });
 
@@ -31,9 +31,13 @@ test.describe('Login functionality', () => {
     await expect(page.getByText('Your username is invalid!')).toBeVisible();
   });
 
-  // Click on the logout button and verify logging out is working as expected
+  // Sign back in, verify signin, and click on the logout button and verify logging out is working as expected
   test('verify logout button', async ({page}) => {
+    await loginPage.login('tomsmith', 'SuperSecretPassword!');
+    await expect(page.getByText('You logged into a secure area!')).toBeVisible();
     await loginPage.logout();
+    // assertion step for verifying logout worked
+    await expect(page.getByText('You logged out of the secure area!')).toBeVisible();
   });
 
 });
