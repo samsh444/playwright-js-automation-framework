@@ -19,15 +19,21 @@ test.describe('Login functionality', () => {
     // Known valid credentials published for this practice site
     await loginPage.login('tomsmith', 'SuperSecretPassword!');
 
-    // TODO: Confirm the correct locator/assertion for the post-login success message.
-    // This site typically shows a flash message like "You logged into a secure area!"
+    // Confirm the correct locator/assertion for the post-login success message.
+    // This site typically shows a message like "You logged into a secure area!"
     await expect(page.getByText('You logged into a secure area!')).toBeVisible();
   });
 
   test('login fails with invalid credentials', async ({ page }) => {
     await loginPage.login('wronguser', 'wrongpassword');
 
-    // TODO: Confirm the correct locator/assertion for the login failure message.
+    // Verification step > assertion for the login failure message.
     await expect(page.getByText('Your username is invalid!')).toBeVisible();
   });
+
+  // Click on the logout button and verify logging out is working as expected
+  test('verify logout button', async ({page}) => {
+    await loginPage.logout();
+  });
+
 });
