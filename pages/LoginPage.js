@@ -20,7 +20,7 @@ export class LoginPage {
     // if that's the case.
     this.usernameField = page.getByRole('textbox', { name: 'Username' });
     this.passwordField = page.getByRole('textbox', { name: 'Password' });
-    this.loginButton = page.getByRole('button', { name: 'Log In' });
+    this.loginButton = page.getByRole('button', { name: 'Login' });
   }
 
   /**
