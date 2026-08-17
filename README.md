@@ -1,6 +1,6 @@
 # Playwright JS Automation Framework
 
-A project for browser automation with [Playwright](https://playwright.dev/) using JavaScript. Built as a foundation for cross-browser UI testing, with plans to expand into API testing, database validation, and Page Object Model architecture.
+A structured, accessible framework for browser automation with [Playwright](https://playwright.dev/) using JavaScript. It's built to be clear enough for anyone to clone, set up, and understand — a solid, well-documented foundation for UI test automation that's designed to grow into a full-featured framework covering API testing, data validation, and Page Object Model architecture.
 
 ## Tech Stack
 
@@ -94,6 +94,17 @@ Once Node.js and npm are installed, set up the project:
 
 ## Running Tests
 
+### Optional: VS Code Extension
+
+If you're using VS Code as your IDE, installing the official [Playwright Test for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright) extension is highly recommended. It adds:
+
+- Inline **Run** / **Debug** buttons directly above each test in the editor, letting you run a single test without touching the terminal
+- A browser picker to run against Chromium, Firefox, or WebKit individually
+- **UI Mode** — a visual test runner with time-travel debugging, DOM snapshots at each step, and a watch mode that reruns tests as you edit
+- One-click access to the trace viewer for failed test runs
+
+The CLI commands below work with or without the extension — it's a convenience layer on top of the same Playwright test runner.
+
 **Run all tests (headless — no visible browser window):**
 ```bash
 npx playwright test
@@ -118,13 +129,24 @@ npx playwright show-report
 
 ```
 playwright-js-automation-framework/
-├── tests/                  # All test spec files
-├── playwright.config.js    # Playwright configuration (browsers, timeouts, etc.)
-├── package.json            # Project dependencies and metadata
-└── .gitignore               # Files/folders excluded from version control
+├── .claude/                 # Claude Code agents and slash commands
+├── agents/                  # Documentation for this repo's AI agents
+├── pages/                   # Page Object Model classes (one per app page/component)
+├── tests/                   # All test spec files
+│   ├── framework/           # Core, reusable framework tests
+│   └── practice/            # Tutorial and exercise tests for learning locators/features
+├── playwright-report/       # Generated HTML test reports (git-ignored)
+├── test-results/            # Generated test run artifacts (git-ignored)
+├── playwright.config.js     # Playwright configuration (browsers, timeouts, etc.)
+├── package.json             # Project dependencies and metadata
+└── .gitignore                # Files/folders excluded from version control
 ```
+
+## AI Agents
+
+This repo includes a small set of Claude Code agents for repetitive framework tasks — starting with a test-documentation agent that adds consistent, polished comments to test files on request. See [`agents/README.md`](agents/README.md) for details on what's available and how to run them.
 
 ## Notes
 
 - Browser projects configured: **Chromium**, **Firefox**, **WebKit** (Safari's engine)
-- This personal project is under active development — structure and conventions will evolve as Page Object Model, API testing, and database validation are introduced.
+- This project is under active development — structure and conventions will continue to evolve as Page Object Model architecture, API testing, and data validation are introduced.
