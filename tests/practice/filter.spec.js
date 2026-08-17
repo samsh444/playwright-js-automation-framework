@@ -40,3 +40,4 @@ test('Add specific item to cart from inventory list', async ({ page }) => {
   // Verify the cart badge shows 1 item after adding
   await expect(page.locator('.shopping_cart_badge')).toHaveText('1');
 });
+
