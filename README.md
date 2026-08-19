@@ -117,7 +117,7 @@ npx playwright test --headed
 
 **Run a specific test file:**
 ```bash
-npx playwright test tests/practice/my-first-test.spec.js
+npx playwright test tests/practice/firstTest.spec.js
 ```
 
 **View the last HTML test report:**
