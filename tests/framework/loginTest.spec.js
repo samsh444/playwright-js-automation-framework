@@ -1,7 +1,7 @@
 // Import Playwright's test runner and assertion library
 import { test, expect } from '@playwright/test';
 
-// Import the LoginPage class — this gives us access to reusable
+// Import the LoginPage class — this gives access to reusable
 // login locators and actions without duplicating them in this file.
 import { LoginPage } from '../../pages/LoginPage.js';
 
